@@ -138,6 +138,8 @@
     "operationName": "Operation Name",
     "recordId": "Record ID",
     "recordVersion": "Recording Agent Version",
+    "requestSence": "Request Sence",
+    "requestAction": "Request Action",
     "requestAttributes": "Request Extra Attributes",
     "requestBodyType": "Request Body Type",
     "responseAttributes": "Response Extra Attributes",

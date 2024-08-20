@@ -90,6 +90,18 @@ const CaseDetailTab: FC<CaseDetailTabProps> = (props) => {
             {currentDetail?.recordVersion}
           </Descriptions.Item>
 
+          <Descriptions.Item span={4} label={t('caseDetail.requestSence')}>
+            {decodeURIComponent(
+              currentDetail?.targetRequest?.attributes?.Headers?.['x-sence'] || '',
+            )}
+          </Descriptions.Item>
+
+          <Descriptions.Item span={4} label={t('caseDetail.requestAction')}>
+            {decodeURIComponent(
+              currentDetail?.targetRequest?.attributes?.Headers?.['x-action'] || '',
+            )}
+          </Descriptions.Item>
+
           <Descriptions.Item span={4} label={t('caseDetail.requestAttributes')}>
             <Input.TextArea
               readOnly

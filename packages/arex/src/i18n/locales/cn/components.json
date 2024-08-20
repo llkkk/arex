@@ -137,6 +137,8 @@
     "operationName": "接口名",
     "recordId": "录制ID",
     "recordVersion": "录制Agent版本",
+    "requestSence": "场景",
+    "requestAction": "操作",
     "requestAttributes": "请求额外参数",
     "requestBodyType": "请求体类型",
     "responseAttributes": "返回额外参数",
