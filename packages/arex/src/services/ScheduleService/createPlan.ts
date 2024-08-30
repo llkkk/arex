@@ -41,6 +41,7 @@ export type CreatePlanReq = {
   operator: string;
   replayPlanType: number;
   planName?: string;
+  proxyEnv?: string;
   caseSourceType?: number;
   caseSourceFrom: number;
   caseSourceTo: number;

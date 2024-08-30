@@ -339,6 +339,8 @@
     "planItemID": "Plan Item ID",
     "planName": "Name",
     "planNamePlaceholder": "Optional, defaults to app name + creation time",
+    "proxyUrl": "proxy",
+    "proxyUrlPlaceholder": "Optional, default none",
     "pointOfDifference": "Point of difference",
     "queued": "Queued",
     "re-calculateReport": "Re-calculate Report",

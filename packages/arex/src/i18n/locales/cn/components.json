@@ -338,6 +338,8 @@
     "planItemID": "子任务 ID",
     "planName": "回放名称",
     "planNamePlaceholder": "可选，默认为应用名称 + 创建时间",
+    "proxyUrl": "代理地址",
+    "proxyUrlPlaceholder": "可选，默认不使用代理",
     "pointOfDifference": "差异点",
     "queued": "队列中",
     "re-calculateReport": "重算报告",

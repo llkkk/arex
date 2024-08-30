@@ -38,6 +38,7 @@ type CreatePlanForm = {
   operationList?: string[];
   caseCountLimit?: number;
   caseTags?: CaseTags;
+  proxyUrl?: string;
 };
 
 export type CreatePlanModalRef = {
@@ -165,6 +166,7 @@ const CreatePlanModal = forwardRef<CreatePlanModalRef, CreatePlanModalProps>(
             sourceEnv: 'pro',
             targetEnv: targetEnv.endsWith('/') ? targetEnv.slice(0, -1) : targetEnv,
             planName: values.planName,
+            proxyEnv: values.proxyUrl,
             caseSourceFrom: values.caseSourceRange[0].valueOf(),
             caseSourceTo: values.caseSourceRange[1].valueOf(),
             operationCaseInfoList: values.operationList?.map((operationId) => ({
@@ -300,6 +302,9 @@ const CreatePlanModal = forwardRef<CreatePlanModalRef, CreatePlanModalProps>(
                   <>
                     <Form.Item label={t('replay.planName')} name='planName'>
                       <Input allowClear placeholder={t('replay.planNamePlaceholder')} />
+                    </Form.Item>
+                    <Form.Item label={t('replay.proxyUrl')} name='proxyUrl'>
+                      <Input allowClear placeholder={t('replay.proxyUrlPlaceholder')} />
                     </Form.Item>
                     <Form.Item
                       label={
