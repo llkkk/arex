@@ -1,14 +1,14 @@
 [
   {
-    "path": "/webApi",
-    "target": "http://10.118.1.217:18090"
+    "path": "/arex/webApi",
+    "target": "http://10.255.31.1:8090"
   },
   {
-    "path": "/schedule",
-    "target": "http://10.118.1.217:18092"
+    "path": "/arex/schedule",
+    "target": "http://10.255.31.1:8092"
   },
   {
-    "path": "/storage",
-    "target": "http://10.118.1.217:18093"
+    "path": "/arex/storage",
+    "target": "http://10.255.31.1:8093"
   }
 ]

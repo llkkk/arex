@@ -48,7 +48,7 @@ const Auth = () => {
           setLocalStorage(EMAIL_KEY, res.body.userName);
           setLocalStorage(ACCESS_TOKEN_KEY, res.body.accessToken);
           setLocalStorage(REFRESH_TOKEN_KEY, res.body.refreshToken);
-          nav('/');
+          nav('/arex');
         }
       },
     },

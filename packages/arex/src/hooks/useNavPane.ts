@@ -31,6 +31,9 @@ function useNavPane(options?: NavPaneOptions) {
           state.setActivePane(pane);
         }
       });
+      if (!url.startsWith('/arex')) {
+        return nav('/arex' + url);
+      }
       return nav(url);
     }
 
@@ -47,6 +50,9 @@ function useNavPane(options?: NavPaneOptions) {
 
     setPanes(pane);
 
+    if (!url.startsWith('/arex')) {
+      return nav('/arex' + url);
+    }
     return nav(url);
   };
 }

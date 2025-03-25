@@ -52,7 +52,7 @@ const ValidateInvitation = () => {
     },
     onFinally() {
       setTimeout(() => {
-        nav('/');
+        nav('/arex');
       }, 1000);
     },
   });
@@ -63,7 +63,7 @@ const ValidateInvitation = () => {
     } catch (e) {
       setStatus(Status.invalidLink);
       setTimeout(() => {
-        nav('/');
+        nav('/arex');
       }, 1000);
     }
   }

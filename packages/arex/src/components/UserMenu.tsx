@@ -20,7 +20,7 @@ const UserMenu: FC = () => {
 
   const handleLogout = () => {
     globalStoreReset();
-    nav('/login');
+    nav('/arex/login');
   };
 
   const userMenu: DropdownProps['menu'] = useMemo(

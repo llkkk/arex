@@ -59,7 +59,7 @@ export class Request {
           if (responseCode === ResponseCode.AUTHENTICATION_FAILED) {
             const navigate = getNavigate();
             globalStoreReset();
-            navigate?.('/login');
+            navigate?.('/arex/login');
           }
 
           return Promise.reject(response.data.responseStatusType.responseDesc);
@@ -134,7 +134,7 @@ export class Request {
 
 const request = new Request({
   timeout: 180000,
-  baseURL: isClientProd ? 'http://localhost:' + port.electronPort : undefined,
+  baseURL: isClientProd ? 'http://localhost:' + port.electronPort : '/arex',
 });
 
 export default request;

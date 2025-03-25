@@ -17,11 +17,12 @@ export default defineConfig(async ({ mode }) => {
   console.log(`🚀launching vite: ${isProduction ? '📦build' : '🔧dev'} [MODE: ${mode}]`);
 
   return {
+    base: '/arex/',
     define: {
       __APP_VERSION__: await import('./package.json').then((pkg) => JSON.stringify(pkg.version)),
       __AUTH_PORT__: port.electronPort,
       'import.meta.env.AREX_REQUEST_RUNTIME': JSON.stringify(
-        isProduction ? '/arex-request-runtime.js' : '/dist/arex-request-runtime.js',
+        isProduction ? '/arex/arex-request-runtime.js' : '/arex/dist/arex-request-runtime.js',
       ),
     },
     resolve: {

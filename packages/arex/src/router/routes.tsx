@@ -14,25 +14,25 @@ export type Routes = {
 
 const routes: Routes[] = Object.values(RouterPath)
   .map<Routes>((path) => ({
-    path,
+    path: '/arex' + path,
     component: Home,
     auth: true,
   }))
   .concat([
     {
-      path: '/oauth/:provider',
+      path: '/arex/oauth/:provider',
       component: lazy(() => import('../pages/Oauth')),
     },
     {
-      path: '/login',
+      path: '/arex/login',
       component: lazy(() => import('../pages/Login')),
     },
     {
-      path: '/logs',
+      path: '/arex/logs',
       component: lazy(() => import('../pages/Logs')),
     },
     {
-      path: '/click',
+      path: '/arex/click',
       component: lazy(() => import('../pages/ValidInvitation')),
     },
   ]);

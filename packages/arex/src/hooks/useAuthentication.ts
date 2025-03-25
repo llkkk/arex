@@ -21,7 +21,7 @@ const useAuthentication = () => {
       return fn(location.pathname);
     });
     const hasLoginInfo = accessToken && email;
-    if (!isFreePathname && !hasLoginInfo) nav('/login?redirect=' + location.pathname);
+    if (!isFreePathname && !hasLoginInfo) nav('/arex/login?redirect=' + location.pathname);
   }, [accessToken, email, location.pathname, nav]);
 };
 

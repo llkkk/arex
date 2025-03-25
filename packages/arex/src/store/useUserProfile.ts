@@ -40,8 +40,8 @@ const useUserProfile = create<UserProfile & UserProfileAction>((set, get) => {
     if (!_email) return;
 
     const profile = await UserService.getUserProfile(_email);
-    i18n.changeLanguage(profile?.language || 'en');
-    window.__locale__ = profile?.language || 'en';
+    i18n.changeLanguage(profile?.language || 'cn');
+    window.__locale__ = profile?.language || 'cn';
     profile && set(profile);
   }
 

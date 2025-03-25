@@ -34,6 +34,34 @@ app.use(
   }),
 );
 
+// API proxies for /arex path
+app.use(
+  '/arex/webApi',
+  createProxyMiddleware({
+    target: SERVICE_API_URL,
+    changeOrigin: true,
+    pathRewrite: { '/arex/webApi': '/api' },
+  }),
+);
+
+app.use(
+  '/arex/schedule',
+  createProxyMiddleware({
+    target: SERVICE_SCHEDULE_URL,
+    changeOrigin: true,
+    pathRewrite: { '/arex/schedule': '/api' },
+  }),
+);
+
+app.use(
+  '/arex/storage',
+  createProxyMiddleware({
+    target: SERVICE_STORAGE_URL,
+    changeOrigin: true,
+    pathRewrite: { '/arex/storage': '/api' },
+  }),
+);
+
 app.use(
   '/storage',
   createProxyMiddleware({
@@ -52,6 +80,16 @@ app.use(
     pathRewrite: () => SERVICE_API_URL + '/vi/health',
   }),
 );
+
+app.use(
+  '/arex/version/webApi',
+  createProxyMiddleware({
+    target: SERVICE_API_URL,
+    changeOrigin: true,
+    pathRewrite: () => SERVICE_API_URL + '/vi/health',
+  }),
+);
+
 app.use(
   '/version/schedule',
   createProxyMiddleware({
@@ -60,6 +98,16 @@ app.use(
     pathRewrite: () => SERVICE_SCHEDULE_URL + '/vi/health',
   }),
 );
+
+app.use(
+  '/arex/version/schedule',
+  createProxyMiddleware({
+    target: SERVICE_SCHEDULE_URL,
+    changeOrigin: true,
+    pathRewrite: () => SERVICE_SCHEDULE_URL + '/vi/health',
+  }),
+);
+
 app.use(
   '/version/storage',
   createProxyMiddleware({
@@ -70,6 +118,16 @@ app.use(
 );
 
 app.use(
+  '/arex/version/storage',
+  createProxyMiddleware({
+    target: SERVICE_STORAGE_URL,
+    changeOrigin: true,
+    pathRewrite: () => SERVICE_STORAGE_URL + '/vi/health',
+  }),
+);
+
+// feature check
+app.use(
   '/checkFeature/webApi',
   createProxyMiddleware({
     target: SERVICE_API_URL,
@@ -77,6 +135,16 @@ app.use(
     pathRewrite: () => SERVICE_API_URL + '/vi/checkFeature',
   }),
 );
+
+app.use(
+  '/arex/checkFeature/webApi',
+  createProxyMiddleware({
+    target: SERVICE_API_URL,
+    changeOrigin: true,
+    pathRewrite: () => SERVICE_API_URL + '/vi/checkFeature',
+  }),
+);
+
 app.use(
   '/checkFeature/schedule',
   createProxyMiddleware({
@@ -85,8 +153,27 @@ app.use(
     pathRewrite: () => SERVICE_SCHEDULE_URL + '/vi/checkFeature',
   }),
 );
+
+app.use(
+  '/arex/checkFeature/schedule',
+  createProxyMiddleware({
+    target: SERVICE_SCHEDULE_URL,
+    changeOrigin: true,
+    pathRewrite: () => SERVICE_SCHEDULE_URL + '/vi/checkFeature',
+  }),
+);
+
 app.use(
   '/checkFeature/storage',
+  createProxyMiddleware({
+    target: SERVICE_STORAGE_URL,
+    changeOrigin: true,
+    pathRewrite: () => SERVICE_STORAGE_URL + '/vi/checkFeature',
+  }),
+);
+
+app.use(
+  '/arex/checkFeature/storage',
   createProxyMiddleware({
     target: SERVICE_STORAGE_URL,
     changeOrigin: true,
@@ -110,6 +197,7 @@ app.get('/env', (req, res) => {
 // should be done before express.static
 app.use(history());
 // redirect to index.html
+app.use('/arex', express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/dist'));
 
 app.listen(PORT, function () {

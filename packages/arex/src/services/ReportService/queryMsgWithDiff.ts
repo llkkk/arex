@@ -13,6 +13,6 @@ export type QueryMsgWithDiffRes = {
 
 export async function queryMsgWithDiff(params: QueryMsgWithDiffReq) {
   return request
-    .post<QueryMsgWithDiffRes>('/webApi/report/queryMsgWithDiff', params)
+    .post<QueryMsgWithDiffRes>('/arex/webApi/report/queryMsgWithDiff', params)
     .then((res) => Promise.resolve(res.body));
 }
